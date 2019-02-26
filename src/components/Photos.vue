@@ -1,13 +1,15 @@
 <template>
-  <ul 
-    v-if="photos.length"
-    class="photo-list">
-    <SinglePhoto />
-  </ul>
-  <h3 v-else>use the search bar to see some sick pics.</h3>
-  <SearchInput
-    @click="searchPhotos"
-  />
+  <div>
+    <ul 
+      v-if="photos.length"
+      class="photo-list">
+      <SinglePhoto />
+    </ul>
+    <h3 v-else>use the search bar to see some sick pics.</h3>
+    <SearchInput
+      @click="searchPhotos"
+    />
+  </div>
 </template>
 
 <script>
@@ -22,12 +24,16 @@
     },
     data() {
       return {
-        photos: []
+        photos: [],
+        searchTerm: ''
       }
     },
     methods: {
       searchPhotos() {
-        return
+        fetch(`https://api.unsplash.com/search/photos?page=1&query=smoke&client_id=${key}`)
+          .then(response => response.json())
+          .then(data => this.photos = data.results)
+          .catch(error => console.log(error))
       }
     }
   }

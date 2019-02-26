@@ -1,10 +1,10 @@
 <template>
-  <form>
+  <div>
     <input 
       class="search"
     />
     <button>search</button>
-  </form>
+  </div>
 </template>
 
 <script>
