@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="loading">
-      <img src="../src/assets/loader.gif"/>
+      <img src="../assets/loader.gif"/>
       Loading.....
     </div>
     <ul 
@@ -45,7 +45,7 @@
         fetch(`https://api.unsplash.com/search/photos?page=1&query=smoke&client_id=${key}`)
           .then((response) => {
             this.loading = false;
-            response.json();
+            return response.json();
           })
           .then(data => this.photos = data.results)
           .catch((error) => {

@@ -1,6 +1,6 @@
 <template>
   <li class="photo">
-    <img src="photo.urls.small" />
+    <img :src="photo.urls.small" />
   </li>
 </template>
 
@@ -18,6 +18,6 @@
 
 <style scoped>
   .photo {
-
+    list-style: none;
   }
 </style>
