@@ -1,6 +1,6 @@
 <template>
-  <ul class="photo-list">
-    <li class="photo"></li>
+  <ul :class="photo-list">
+    
   </ul>
 </template>
 
