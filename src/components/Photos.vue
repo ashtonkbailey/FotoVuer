@@ -5,15 +5,17 @@
     <SinglePhoto />
   </ul>
   <h3 v-else>use the search bar to see some sick pics.</h3>
+  <SearchInput />
 </template>
 
 <script>
   import SinglePhoto from './SinglePhoto.vue'
+  import SearchInput from './SearchInput.vue'
 
   export default {
     name: 'Photos',
     components: {
-      SinglePhoto
+      SinglePhoto, SearchInput
     },
     data() {
       return {
