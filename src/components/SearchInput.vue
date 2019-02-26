@@ -1,20 +1,38 @@
 <template>
   <div>
     <input 
-      class="search"
+      type="text"
+      class="input"
+      :value="value"
+      v-on="listeners"
     />
-    <button>search</button>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'SearchInput'
+    name: 'SearchInput',
+    props: {
+      value: {
+        type: String,
+        default: '',
+      }
+    },
+    computed: {
+      listeners () {
+        return {
+          ...this.$listeners,
+          input: event => this.$emit('input', event.target.value)
+        }
+      }
+    }
   }
 </script>
 
 <style>
-  .search {
-
+  .input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid
   }
 </style>

@@ -7,7 +7,9 @@
     </ul>
     <h3 v-else>use the search bar to see some sick pics.</h3>
     <SearchInput
-      @click="searchPhotos"
+      v-model="term"
+      placeholder="type a search term and click 'enter'"
+      @keydown.enter="searchPhotos"
     />
   </div>
 </template>
@@ -15,7 +17,7 @@
 <script>
   import SinglePhoto from './SinglePhoto.vue'
   import SearchInput from './SearchInput.vue'
-  import key from '../key.js'
+  import { key } from '../key.js'
 
   export default {
     name: 'Photos',
@@ -25,7 +27,7 @@
     data() {
       return {
         photos: [],
-        searchTerm: ''
+        term: ''
       }
     },
     methods: {
@@ -33,7 +35,7 @@
         fetch(`https://api.unsplash.com/search/photos?page=1&query=smoke&client_id=${key}`)
           .then(response => response.json())
           .then(data => this.photos = data.results)
-          .catch(error => console.log(error))
+          .catch(error => console.error(error))
       }
     }
   }
