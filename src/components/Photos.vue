@@ -1,9 +1,17 @@
 <template>
   <div>
+    <div v-if="loading">
+      <img src="../src/assets/loader.gif"/>
+      Loading.....
+    </div>
     <ul 
       v-if="photos.length"
       class="photo-list">
-      <SinglePhoto />
+      <SinglePhoto
+        v-for="photo in photos"
+        :key="photo.id"
+        :photo="photo"
+      />
     </ul>
     <h3 v-else>use the search bar to see some sick pics.</h3>
     <SearchInput
@@ -27,15 +35,23 @@
     data() {
       return {
         photos: [],
-        term: ''
+        term: '',
+        loading: false
       }
     },
     methods: {
       searchPhotos() {
+        this.loading = true;
         fetch(`https://api.unsplash.com/search/photos?page=1&query=smoke&client_id=${key}`)
-          .then(response => response.json())
+          .then((response) => {
+            this.loading = false;
+            response.json();
+          })
           .then(data => this.photos = data.results)
-          .catch(error => console.error(error))
+          .catch((error) => {
+            this.loading = false;
+            console.error(error);
+          })
       }
     }
   }
