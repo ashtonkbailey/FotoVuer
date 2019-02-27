@@ -18,12 +18,21 @@ export default {
 </script>
 
 <style>
+body {
+  background: linear-gradient(80deg, #101d37, #09090a);
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #afcad1;
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  margin: 0;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+}
+.title {
+  color: #fea18a;
+  font-family: 'Nova Flat', cursive;
+  font-size: 3rem;
+  margin-top: 0;
 }
 </style>
