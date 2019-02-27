@@ -9,7 +9,7 @@ This project is written in Vue, initialized with the VueCLI. It displays photos 
  4. create a file called ```key.js``` in the ```src``` directory
  5. in the ```key.js``` file, insert
     ```
-    export const key = <your access key here>
+    export const key = '<your access key here>';
     ``` 
  6. ```npm run serve```
 
