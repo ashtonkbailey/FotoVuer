@@ -3,18 +3,16 @@
     <h1 class="title">FotoVuer</h1>
     <h3 class="search-word">results for ''</h3>
     <Photos />
-    <SearchInput />
   </div>
 </template>
 
 <script>
 import Photos from './components/Photos.vue'
-import SearchInput from './components/SearchInput.vue'
 
 export default {
   name: 'app',
   components: {
-    Photos, SearchInput
+    Photos
   }
 }
 </script>
