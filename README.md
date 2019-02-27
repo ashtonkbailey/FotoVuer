@@ -8,4 +8,4 @@ This project is written in Vue, initialized with the VueCLI. It displays photos 
  3. ```npm run serve```
 
 ## Running:
-![search 'birds'](https://github.com/ashtonkbailey/FotoVuer/src/assets/running.png "Search for 'birds'")
+<img width="1440" alt="running" src="https://user-images.githubusercontent.com/35431767/53512643-7edabc80-3a80-11e9-8d93-da7152febb4e.png">
