@@ -1,29 +1,11 @@
 # fotovuer
+This project is written in Vue, initialized with the VueCLI. It displays photos from the Unsplash API based on user's search criteria.
 
 ## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+ 1. clone down this repo.
+ 2.  ```npm install```
+ 3. ```npm run serve```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Running:
+![search 'birds'](https://github.com/ashtonkbailey/markdown-here/raw/master/src/assets/running.png "Search for 'birds'")
