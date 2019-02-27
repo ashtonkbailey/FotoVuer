@@ -33,6 +33,5 @@ body {
   color: #fea18a;
   font-family: 'Nova Flat', cursive;
   font-size: 3rem;
-  margin-top: 0;
 }
 </style>

@@ -28,7 +28,7 @@
         class='carousel-controls'
         @click="previous"
       >
-        prev
+        prev photo
       </button>
       <SearchInput
         v-model="term"
@@ -38,7 +38,7 @@
         class='carousel-controls'
         @click="next"
       >
-        next
+        next photo
       </button>
     </div>
   </div>
@@ -102,9 +102,19 @@
     width: 40em;
     min-height: 25em;
   }
+  .no-photos {
+    margin: auto;
+  }
   .photo-controls {
     display: flex;
     flex-direction: row;
     width: 100%;
+  }
+  .carousel-controls {
+    background-image: linear-gradient(#b8d3da, #5493a4);
+    border-color: #5493a4 #5493a4 hsl(193, 32%, 41.5%);
+    color: #ffffff;
+    font-size: 1rem;
+    width: 8rem;
   }
 </style>
