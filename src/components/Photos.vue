@@ -92,15 +92,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 73vh;
+    height: 70vh;
   }
   .photo-list {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 30em;
     overflow: hidden;
-    width: 40em;
-    min-height: 25em;
+    width: 55em;
   }
   .no-photos {
     margin: auto;

@@ -35,6 +35,7 @@
     width: 70%;
   }
   .input {
+    background-color: #dee9eb;
     border: 1px solid;
     font-size: 1rem;
     height: 2rem;
