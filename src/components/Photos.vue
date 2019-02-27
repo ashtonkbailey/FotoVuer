@@ -4,16 +4,23 @@
       <img src="../assets/loader.gif"/>
       Loading.....
     </div>
-    <ul 
-      v-if="photos.length"
-      class="photo-list">
-      <SinglePhoto
-        v-for="photo in photos"
-        :key="photo.id"
-        :photo="photo"
-      />
-    </ul>
-    <h3 v-else>use the search bar to see some sick pics.</h3>
+    <div class="carousel-view">
+      <transition-group
+        tag="div"
+        v-if="photos.length"
+        class="photo-list"
+      >
+        <SinglePhoto
+          v-for="photo in photos"
+          :key="photo.id"
+          :photo="photo"
+        />
+      </transition-group>
+      <h2
+        v-else
+        class="no-photos"
+      >use the search bar to browse photos</h2>
+    </div>
     <SearchInput
       v-model="term"
       @keydown.enter="searchPhotos"
@@ -57,6 +64,9 @@
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .carousel-view {
+    height: 75vh;
+  }
   .photo-list {
     
   }

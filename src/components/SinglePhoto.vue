@@ -1,7 +1,7 @@
 <template>
-  <li class="photo">
+  <div class="photo">
     <img :src="photo.urls.small" />
-  </li>
+  </div>
 </template>
 
 <script>
