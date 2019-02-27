@@ -16,7 +16,6 @@
     <h3 v-else>use the search bar to see some sick pics.</h3>
     <SearchInput
       v-model="term"
-      placeholder="type a search term and click 'enter'"
       @keydown.enter="searchPhotos"
     />
   </div>
@@ -42,7 +41,7 @@
     methods: {
       searchPhotos() {
         this.loading = true;
-        fetch(`https://api.unsplash.com/search/photos?page=1&query=smoke&client_id=${key}`)
+        fetch(`https://api.unsplash.com/search/photos?page=1&query=${this.term}&client_id=${key}`)
           .then((response) => {
             this.loading = false;
             return response.json();

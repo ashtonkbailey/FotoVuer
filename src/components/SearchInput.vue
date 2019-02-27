@@ -4,6 +4,7 @@
       type="text"
       class="input"
       :value="value"
+      placeholder="type a search term and click 'enter'"
       v-on="listeners"
     />
   </div>
