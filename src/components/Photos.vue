@@ -4,20 +4,43 @@
       <img src="../assets/loader.gif"/>
       Loading.....
     </div>
-    <ul 
-      v-if="photos.length"
-      class="photo-list">
-      <SinglePhoto
-        v-for="photo in photos"
-        :key="photo.id"
-        :photo="photo"
+    <div class="carousel-view">
+      <transition-group
+        tag="div"
+        v-if="photos.length"
+        class="photo-list"
+      >
+        <SinglePhoto
+          v-for="photo in photos"
+          :key="photo.id"
+          :photo="photo"
+        />
+      </transition-group>
+      <h2
+        v-else
+        class="no-photos"
+      >
+        use the search bar below to browse photos
+      </h2>
+    </div>
+    <div class='photo-controls'>
+      <button
+        class='carousel-controls'
+        @click="previous"
+      >
+        prev
+      </button>
+      <SearchInput
+        v-model="term"
+        @keydown.enter="searchPhotos"
       />
-    </ul>
-    <h3 v-else>use the search bar to see some sick pics.</h3>
-    <SearchInput
-      v-model="term"
-      @keydown.enter="searchPhotos"
-    />
+      <button
+        class='carousel-controls'
+        @click="next"
+      >
+        next
+      </button>
+    </div>
   </div>
 </template>
 
@@ -51,13 +74,48 @@
             this.loading = false;
             console.error(error);
           })
+      },
+      next () {
+        const first = this.photos.shift()
+        this.photos = this.photos.concat(first)
+      },
+      previous () {
+        const last = this.photos.pop()
+        this.photos = [last].concat(this.photos)
       }
     }
   }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .carousel-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+  }
   .photo-list {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30em;
+    overflow: hidden;
+    width: 55em;
+  }
+  .no-photos {
+    margin: auto;
+  }
+  .photo-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .carousel-controls {
+    background-image: linear-gradient(#b8d3da, #5493a4);
+    border-color: #5493a4 #5493a4 hsl(193, 32%, 41.5%);
+    color: #ffffff;
+    font-size: 1.4rem;
+    width: 5rem;
   }
 </style>
