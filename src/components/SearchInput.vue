@@ -32,12 +32,13 @@
 
 <style>
   .input-container {
-    width: 100%;
+    width: 70%;
   }
   .input {
     border: 1px solid;
+    font-size: 1rem;
     height: 2rem;
     padding: 8px 10px;
-    width: 80%;
+    width: 100%;
   }
 </style>
