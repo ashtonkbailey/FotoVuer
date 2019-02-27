@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="input-container">
     <input 
       type="text"
       class="input"
@@ -31,9 +31,13 @@
 </script>
 
 <style>
-  .input {
+  .input-container {
     width: 100%;
+  }
+  .input {
+    border: 1px solid;
+    height: 2rem;
     padding: 8px 10px;
-    border: 1px solid
+    width: 80%;
   }
 </style>

@@ -18,6 +18,20 @@
 
 <style scoped>
   .photo {
-    list-style: none;
+    flex: 0 0 20em;
+  height: 20em;
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1em dashed #000;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+  }
+  .photo:first-of-type {
+    opacity: 0;
+  }
+  .photo:last-of-type {
+    opacity: 0;
   }
 </style>

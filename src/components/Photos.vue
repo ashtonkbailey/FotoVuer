@@ -19,12 +19,28 @@
       <h2
         v-else
         class="no-photos"
-      >use the search bar to browse photos</h2>
+      >
+        use the search bar below to browse photos
+      </h2>
     </div>
-    <SearchInput
-      v-model="term"
-      @keydown.enter="searchPhotos"
-    />
+    <div class='photo-controls'>
+      <button
+        class='carousel-controls'
+        @click="previous"
+      >
+        prev
+      </button>
+      <SearchInput
+        v-model="term"
+        @keydown.enter="searchPhotos"
+      />
+      <button
+        class='carousel-controls'
+        @click="next"
+      >
+        next
+      </button>
+    </div>
   </div>
 </template>
 
@@ -58,6 +74,14 @@
             this.loading = false;
             console.error(error);
           })
+      },
+      next () {
+        const first = this.photos.shift()
+        this.photos = this.photos.concat(first)
+      },
+      previous () {
+        const last = this.photos.pop()
+        this.photos = [last].concat(this.photos)
       }
     }
   }
@@ -65,9 +89,22 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .carousel-view {
-    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 73vh;
   }
   .photo-list {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 40em;
+    min-height: 25em;
+  }
+  .photo-controls {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
   }
 </style>

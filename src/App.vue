@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <h1 class="title">FotoVuer</h1>
-    <h3 class="search-word">results for ''</h3>
     <Photos />
   </div>
 </template>
@@ -20,6 +19,7 @@ export default {
 <style>
 body {
   background: linear-gradient(80deg, #101d37, #09090a);
+  overflow: hidden;
 }
 #app {
   color: #afcad1;
